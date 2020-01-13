@@ -1,13 +1,17 @@
 <?php 
 
-	//Conexion
+	//Conexión
 
 	$server = "localhost";
 	$username = "root";
 	$password = "";
-	$database = "proyecto-php-puro"
+	$database = "proyecto-php-puro";
 
-$db = mysql_connect($server, $username, $password, $database);
+	$db = mysqli_connect($server, $username, $password, $database);
+
+	
+	mysqli_query($db, "SET NAMES 'UTF-8");
+
 
 
  ?>
