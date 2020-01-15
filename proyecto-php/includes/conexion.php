@@ -12,6 +12,9 @@
 	
 	mysqli_query($db, "SET NAMES 'UTF-8");
 
+	//Inicia la sesión; 
+
+	session_start();
 
 
  ?>
