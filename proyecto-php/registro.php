@@ -92,27 +92,32 @@
 
 			//die();
 
-			$sql = "INSERT INTO `usuarios`(`name`, `lastname`, `email`, `password`) VALUES ($name,lastName,$email,CURDATE(),$password_segura)";
+			$sql = "INSERT INTO `usuarios`(`name`, `lastname`, `email`, `fecha`,`password`) VALUES ('$name','$lastName','$email',CURDATE(),'$password_segura')";
 
 			$guardar = mysqli_query($db, $sql);
 
+			
+			/*Para mostrar algun error que se genere en la consulta 
+
+			var_dump(mysqli_error($db));
+			die();
+
+			*/
+
 			if($guardar){
+
 				$_SESSION['completado'] = "El registro se ha completado con exito";
 			}
 			else{
-				$_SESSION['errores'] = "Fallo al guardar el usuario";
+
+				$_SESSION['errores']['general'] = "Fallo al guardar el usuario";
  			}
-
-
 
 		}else{
 			//Retornamos al formulario con un mensaje de error
 
 			$_SESSION['errores'] = $errores;
-			header('Location: index.php');
-
-
-
+			
 		}
 
 

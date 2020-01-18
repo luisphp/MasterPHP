@@ -34,9 +34,21 @@
 
 
 					<h3>Registrate</h3>
-					<?php if(isset($_SESSION['completado'])){
-						echo $_SESSION['completado'];
-					} ?>
+
+					<!--Mostrar errores-->
+
+					<?php if(isset($_SESSION['completado'])): ?>
+						
+						<div class="alerta alerta-exito"> <?=  $_SESSION['completado']; ?> </div>
+					 
+					 <?php  elseif(isset($_SESSION['errores']['general'])): ?>
+
+					 	<div class="alerta alerta-exito"> <?=  $_SESSION['errores']['general']; ?> </div>
+
+
+					 <?php endif; ?>	
+
+					 	
 					<form action="registro.php" method="post" accept-charset="utf-8">
 						
 						<label for="Name">Name</label>
