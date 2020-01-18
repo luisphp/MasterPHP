@@ -92,7 +92,7 @@
 
 			//die();
 
-			$sql = "INSERT INTO `usuarios`(`name`, `lastname`, `email`, `password`) VALUES ($name,lastName,$email,CURDATE(),$password_segura);";
+			$sql = "INSERT INTO `usuarios`(`name`, `lastname`, `email`, `password`) VALUES ($name,lastName,$email,CURDATE(),$password_segura)";
 
 			$guardar = mysqli_query($db, $sql);
 

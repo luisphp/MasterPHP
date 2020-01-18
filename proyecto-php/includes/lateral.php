@@ -33,7 +33,10 @@
 
 
 
-					<h3>Registro</h3>
+					<h3>Registrate</h3>
+					<?php if(isset($_SESSION['completado'])){
+						echo $_SESSION['completado'];
+					} ?>
 					<form action="registro.php" method="post" accept-charset="utf-8">
 						
 						<label for="Name">Name</label>
