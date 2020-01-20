@@ -1,25 +1,24 @@
 <?php 
 
-	
-
-	
-	
 	if(isset($_POST)){
 
 		//Cargar conexion a la base de datos
 		require_once 'includes/conexion.php';
 
-		session_start();
+		//Iniciar sesion
+		if(!isset($_SESSION)){
+			session_start();	
+		}
 
 		//Recoger los valores del formulario de registro
 
-		$name = isset($_POST['Name']) ? $_POST['Name'] : false;
+		$name = isset($_POST['Name']) ? mysqli_real_escape_string($db, $_POST['Name'] ) : false;
 
-		$lastName = isset($_POST['lastName']) ? $_POST['lastName'] : false;
+		$lastName = isset($_POST['lastName']) ? mysqli_real_escape_string($db, $_POST['lastName'] ) : false;
 
-		$email = isset($_POST['email']) ? $_POST['email'] : false;
+		$email = isset($_POST['email']) ? mysqli_real_escape_string($db, trim($_POST['email'] ) ) : false;
 
-		$password = isset($_POST['password']) ? $_POST['password'] : false;
+		$password = isset($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password'])  : false;
 
 		//Array de errores
 
@@ -78,7 +77,7 @@
 
 			$guardar_user = true;
 
-			$password_segura = password_hash($password, PASSWORD_BCRYPT, array ('cost'=> 10));
+			$password_segura = password_hash($password, PASSWORD_DEFAULT);
 
 			//Mostrar contraseña
 			//var_dump($password);
