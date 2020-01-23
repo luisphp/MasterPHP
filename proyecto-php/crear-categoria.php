@@ -10,8 +10,8 @@
  	<h1> Crear categoria</h1>
 
  	<p>Añade nuevas categorias al blog para que los usuarios puedan usarlas al crear sus entradas</p>
- 	
- 	<form action="guardar-categoria.php" method="post" accept-charset="utf-8">
+ 	<br>
+ 	<form action="guardar-entrada.php" method="post" accept-charset="utf-8">
  		<label for="nombre">Nombre de la categoria</label>
  		<input type="text" name="nombre">
 

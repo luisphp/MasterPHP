@@ -1,15 +1,12 @@
-<?php 
-
+<?php
 	require_once 'conexion.php';
 	require_once 'includes/helpers.php';
- ?>
-
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
 		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
 		<title>Index del Blog con php puro y msql</title>
 		<!--CSS Bootstrap-->
@@ -24,37 +21,23 @@
 	<body>
 		
 		<!--Cabecera -->
-	<header id="cabecera" class="">
+		<header id="cabecera" class="">
 			<div id="logo">
 				<a href="index.php">
 					Blog de Videojuegos
 				</a>
 			</div>
-			
-			
-			
 			<!--Menu -->
-
-			
-
 			<nav id="menu">
 				<ul>
 					<li><a href="index.php" title="">Index</a></li>
-
-					<?php $categorias = getCategories($db); 
-
+					<?php $categorias = getCategories($db);
 					
 					if(!empty($categorias)):
-
-					 while ($categoria = mysqli_fetch_assoc($categorias)): ?>
-
-						<li
-						>	<a href="category.php?id=<?= $categoria['id_category'] ?>"><?= $categoria['name'] ?></a>
-						</li>
-
+					while ($categoria = mysqli_fetch_assoc($categorias)): ?>
+					<li> <a href="categoria.php?id_cat=<?= $categoria['id_category'] ?>"><?= $categoria['name'] ?></a> </li>
 					<?php endwhile; endif; ?>
 					
-
 					<li><a href="entradas.php" title="">Entradas</a></li>
 					<li><a href="sobremi.php" title="">Sobre Mi</a></li>
 					<li><a href="contacto.php" title="">Contacto</a></li>
@@ -64,7 +47,4 @@
 				
 			</div>
 		</header>
-
 		<div id="contenedor">
-
-
