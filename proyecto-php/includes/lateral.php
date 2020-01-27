@@ -1,5 +1,18 @@
 <!--Barra Lateral -->
 <aside id="sidebar">
+	<!--Buscador-->
+	<div id="buscador" class="bloque">
+		
+		<h3>Buscar</h3>
+		<!-- Formulario para buscar  -->
+		<form action="buscador.php" method="post" accept-charset="utf-8">
+			
+			<input type="text" name="busqueda" id="buscar" placeholder="¿Qué estas buscando?" />
+			<input type="submit" name="buscar">
+		</form>
+		
+	</div>
+	<!-- Fin buscador -->
 	<!-- En caso de que la sesion se inicie correctamente -->
 	<?php if(isset($_SESSION['usuario'])): ?>
 	<div id="usuario-logueado" class="bloque">

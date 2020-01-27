@@ -95,4 +95,13 @@
 		}
 		return $resultado;
 		}
+	function buscadorDeEntrada($conexion, $busqueda){
+		$sql = "SELECT e.*, c.name as category_name, u.* FROM  entradas e join categorias c on c.id_category = e.fk_category_id join usuarios u on e.fk_user_id = u.id_user WHERE e.title LIKE '%$busqueda%'";
+		$entradas = mysqli_query($conexion, $sql);
+		$resultado = array();
+		if($entradas && mysqli_num_rows($entradas) >= 1){
+			$resultado = $entradas;
+		}
+		return $resultado;			
+		}
 ?>
