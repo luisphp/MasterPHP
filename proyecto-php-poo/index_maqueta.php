@@ -47,9 +47,9 @@
 							<input type="submit" name="enviar" value="Enviar">
 						</form>
 						<ul>
-						    <li><a href="#">Mis Pedidos</a></li>
-						    <li><a href="#">Gestionar Pedidos</a></li>
-						    <li><a href="#">gestionar Categorias</a></li>
+							<li><a href="#">Mis Pedidos</a></li>
+							<li><a href="#">Gestionar Pedidos</a></li>
+							<li><a href="#">gestionar Categorias</a></li>
 						</ul>
 						
 						
@@ -57,34 +57,33 @@
 						
 					</div>
 				</aside>
-			
-			<!-- Contenido central -->
-			<div id="central">
-				<h1>Producto destacados</h1>
-				<div class="product">
-
-					<img src="assets/images/camisa-blanca-dibujo-png.png" alt="">
-					<h2>Camiseta Azul holgada Ancha</h2>
-					<p>30 Euros</p>
-					<a href="" class="button">Comprar</a>
+				
+				<!-- Contenido central -->
+				<div id="central">
+					<h1>Producto destacados</h1>
+					<div class="product">
+						<img src="assets/images/camisa-blanca-dibujo-png.png" alt="">
+						<h2>Camiseta Azul holgada Ancha</h2>
+						<p>30 Euros</p>
+						<a href="" class="button">Comprar</a>
+					</div>
+					<div class="product">
+						<img src="assets/images/camisa-blanca-dibujo-png.png" alt="">
+						<h2>Camiseta Azul holgada Ancha</h2>
+						<p>30 Euros</p>
+						<a href="" class="button">Comprar</a>
+					</div>
+					<div class="product">
+						<img src="assets/images/camisa-blanca-dibujo-png.png" alt="">
+						<h2>Camiseta Azul holgada Ancha</h2>
+						<p>30 Euros</p>
+						<a href="" class="button">Comprar</a>
+					</div>
 				</div>
-				<div class="product">
-					<img src="assets/images/camisa-blanca-dibujo-png.png" alt="">
-					<h2>Camiseta Azul holgada Ancha</h2>
-					<p>30 Euros</p>
-					<a href="" class="button">Comprar</a>
-				</div>
-				<div class="product">
-					<img src="assets/images/camisa-blanca-dibujo-png.png" alt="">
-					<h2>Camiseta Azul holgada Ancha</h2>
-					<p>30 Euros</p>
-					<a href="" class="button">Comprar</a>
-				</div>
-			</div>
 			</div>
 			<!-- Footer ó pie de pagina -->
 			<footer id="footer">
-				<p>Desarrollado por Luis Hurtado &copy; 2020</p>
+				<p>Desarrollado por Luis Hurtado&copy; 2020</p>
 			</footer>
 		</div>
 		
