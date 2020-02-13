@@ -5,8 +5,8 @@
 RewriteEngine on
 ErrorDocument 404 http://localhost/masterphp/proyecto-php-poo/error
 
-RewriteCond %{SCRPIT_FILENAME} !-d
-RewriteCond %{SCRPIT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
 
 RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
 

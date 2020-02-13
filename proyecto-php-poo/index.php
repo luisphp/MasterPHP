@@ -1,6 +1,13 @@
 <?php
 
+
+	//Inicia la sesion para mostrar mensajes al usuario guardados en las variables de sesiones
+
+	session_start();
+
 	require_once 'autoload.php';
+	require_once 'config/db.php';
+	require_once 'helpers/utils.php';
 	require_once 'config/parameters.php';
 	require_once 'views/layouts/header.php';
 	require_once 'views/layouts/sidebar.php';
@@ -10,6 +17,8 @@
 	
 	//Llamando al metodo en especifico y directamente
 	//$controlador->crear();
+
+	
 
 	function showError(){
 		$error = new errorController();
