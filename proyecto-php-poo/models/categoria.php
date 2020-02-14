@@ -1,9 +1,6 @@
 <?php 
-	
+
 	class Categoria{
-
-
-		require_once 'config/db.php'
 
 		private $id_categoria;
 		private $nombre;
@@ -54,6 +51,16 @@
         $this->nombre = $nombre;
 
         return $this;
+    }
+
+
+    // Listar todas las categorias
+
+    public function getAll(){
+    	$categorias = $this->db->query("SELECT * from categorias");
+
+
+    	return $categorias;
     }
 
     // Fin de la clase categoria
