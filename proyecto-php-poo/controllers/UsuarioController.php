@@ -76,8 +76,29 @@
 
 				//1- Generar consulta a la base de datos
 
+				$usuario = new Usuario();
+				$usuario->setEmail($_POST['email']);
+				$usuario->setPassword($_POST['password']);
 
-				//2- 
+				$identity = $usuario->login();
+
+
+				//var_dump($identity);
+				//die();
+
+
+				if($identity && is_object($identity)){
+					$_SESSION['identity'] = $identity;
+
+					if($identity->role == 'admin'){
+						$_SESSION['admin'] = true;
+					}
+				}else{
+					$_SESSION['error_login'] = 'Identificacion fallida';
+				}
+
+				
+
 
 
 			}
@@ -85,7 +106,21 @@
 			header("Location:".base_url);
 
 		}
-	}
+		// Cerrar sesion
+		public function logout(){
 
+			if(isset($_SESSION['identity'])){
+				unset($_SESSION['identity']);
+			}
+
+			if(isset($_SESSION['admin'])){
+				unset($_SESSION['admin']);
+			}
+
+			header("Location:".base_url);
+
+		}
+	}
+// Fin de la clase
 
  ?>
