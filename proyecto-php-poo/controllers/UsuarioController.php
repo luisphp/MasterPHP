@@ -97,10 +97,6 @@
 					$_SESSION['error_login'] = 'Identificacion fallida';
 				}
 
-				
-
-
-
 			}
 			//Regresamos  al index (login)
 			header("Location:".base_url);

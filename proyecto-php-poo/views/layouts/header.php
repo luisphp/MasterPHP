@@ -21,16 +21,13 @@
 			<!-- Menú -->
 			<nav id="menu">
 				<ul>
-					<li><a href="#" title="">Inicio</a></li>
+					<li><a href="<?=base_url?>" title="">Inicio</a></li>
 				</ul>
+				<?php $categorias = Utils::showCategories(); ?>
 				<ul>
-					<li><a href="#" title="">Cat 1</a></li>
-				</ul>
-				<ul>
-					<li><a href="#" title="">Cat 2</a></li>
-				</ul>
-				<ul>
-					<li><a href="#" title="">Cat 3</a></li>
+				<?php while($cat = $categorias->fetch_object()): ?>
+					<li><a href="<?=base_url?>categoria/<?=$cat->id_categoria?>" title=""><?=$cat->nombre?></a></li>
+				<?php endwhile; ?>	
 				</ul>
 			</nav>
 			<!-- Contenido -->

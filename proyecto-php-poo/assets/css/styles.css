@@ -193,6 +193,19 @@ nav a
 
 }
 
+table
+{
+	border: 1px solid #ccc;
+	width: 100%;
+	text-align: center;
+}
+
+td
+{
+	border-top: 1px solid #ccc;
+	padding: 2px;
+}
+
 /*Formularios*/
 
 input[type="text"],
@@ -238,6 +251,15 @@ button,
 	background: #33AE3D;
 	color: white !important;
 	text-decoration: none;
+}
+
+.button-small
+{
+	width: 20%;
+	text-align: center;
+	margin-bottom: 25px;
+	margin-top: 20px;
+	float: right;
 }
 
 /*Label*/

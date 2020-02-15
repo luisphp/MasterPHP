@@ -7,61 +7,62 @@
 		private $db;
 
 
-		public function __construct(){
+	public function __construct(){
 
-			$this->db = Database::connect();
+		$this->db = Database::connect();
 
-		}
+	}
 
-    /**
-     * @return mixed
-     */
     public function getIdCategoria()
     {
         return $this->id_categoria;
     }
 
-    /**
-     * @param mixed $id_categoria
-     *
-     * @return self
-     */
     public function setIdCategoria($id_categoria)
     {
         $this->id_categoria = $id_categoria;
-
-        return $this;
     }
 
-    /**
-     * @return mixed
-     */
     public function getNombre()
     {
         return $this->nombre;
+
     }
 
-    /**
-     * @param mixed $nombre
-     *
-     * @return self
-     */
     public function setNombre($nombre)
     {
-        $this->nombre = $nombre;
-
-        return $this;
+        $this->nombre = $this->db->real_escape_string($nombre);
     }
 
 
     // Listar todas las categorias
 
     public function getAll(){
-    	$categorias = $this->db->query("SELECT * from categorias");
 
+    	$categorias = $this->db->query("SELECT * from categorias ORDER BY id_categoria DESC");
 
     	return $categorias;
     }
+
+    //Guardar nueva categoria
+
+    public function save(){
+
+    	$sql = "INSERT INTO `categorias`(`nombre`) VALUES ('{$this->getNombre()}')";
+
+			$save =  $this->db->query($sql);
+
+			$result = false;
+
+			if($save){
+
+				$result = true;
+			}
+
+			return $result;
+
+    }
+
 
     // Fin de la clase categoria
 
