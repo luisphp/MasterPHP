@@ -3,6 +3,26 @@
 	<a class="button button-small" href="<?=base_url?>producto/crear">Crear producto</a>
 	<br>
 
+
+	<!-- Mostrar mensaje en la pantalla al crear producto -->
+	<?php if(isset($_SESSION['producto']) && $_SESSION['producto'] == 'completed'): ?>
+		<strong>Se guardo el produto correctamente</strong>
+	<?php elseif(isset($_SESSION['producto']) && $_SESSION['producto'] != 'completed'): ?>
+		<strong>Ocurrio un error al guardar</strong>
+	<?php endif; ?>	
+
+	<!-- Mostrar mensaje en la pantalla al eliminar producto -->
+	<?php if(isset($_SESSION['delete']) && $_SESSION['delete'] == 'completed'): ?>
+		<strong>Se borro el produto correctamente</strong>
+	<?php elseif(isset($_SESSION['delete']) && $_SESSION['delete'] != 'completed'): ?>
+		<strong>Ocurrio un error al borrar</strong>
+	<?php endif; ?>	
+	
+	
+	<br>
+	<?php Utils::deleteSession('producto'); ?>
+	<?php Utils::deleteSession('delete'); ?>	
+
 <table>
 
 	<!--
@@ -18,14 +38,13 @@
 
 	 -->
 	<tr>
-		<th>id_producto</th>
-		<th>Descripcions</th>
+		<th>id</th>
+		<th>Desc</th>
 		<th>Precio</th>
-		<th>fk_id_categoria</th>
+		<th>id_cat</th>
 		<th>Stock</th>
-		<th>Oferta</th>
 		<th>Fecha</th>
-		<th>Imagen</th>
+		<th>Acciones</th>
 		<th></th>
 	</tr>
 
@@ -37,9 +56,11 @@
 		<td><?=$prod->precio;?></td>
 		<td><?=$prod->fk_id_categoria;?></td>
 		<td><?=$prod->stock;?></td>
-		<td><?=$prod->oferta;?></td>
 		<td><?=$prod->fecha;?></td>
-		<td><?=$prod->imagen;?></td>
+		<td>
+				<a href="<?=base_url?>producto/edit&id=<?=$prod->id_producto?>" class="button button-getion button-gray">Editar</a>
+				<a href="<?=base_url?>producto/delete&id=<?=$prod->id_producto?>" class="button button-getion button-red">Borrar</a>
+		</td>
 	</tr>
 	
 <?php endwhile; ?>

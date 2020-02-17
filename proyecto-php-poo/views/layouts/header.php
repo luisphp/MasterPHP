@@ -26,7 +26,7 @@
 				<?php $categorias = Utils::showCategories(); ?>
 				<ul>
 				<?php while($cat = $categorias->fetch_object()): ?>
-					<li><a href="<?=base_url?>categoria/<?=$cat->id_categoria?>" title=""><?=$cat->nombre?></a></li>
+					<li><a href="<?=base_url."categoria/ver&id=".$cat->id_categoria?>" title=""><?=$cat->nombre?></a></li>
 				<?php endwhile; ?>	
 				</ul>
 			</nav>

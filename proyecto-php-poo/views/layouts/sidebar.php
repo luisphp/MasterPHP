@@ -43,7 +43,7 @@
 			
 			<li><a href="<?=base_url?>categoria/index">Gestionar todas las Categorias</a></li>
 			
-			<li><a href="<?=base_url?>producto/index">Gestionar todos los Productos</a></li>
+			<li><a href="<?=base_url?>producto/gestion">Gestionar todos los Productos</a></li>
 			</ul>
 			<?php endif; ?>	
 

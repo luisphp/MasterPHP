@@ -1,13 +1,14 @@
 <?php 
 
 	require_once 'models/categoria.php';
+	require_once 'models/producto.php';
 
 	class categoriaController
 	{
 
 		public function index(){
 
-			//Comprbar que el role del usuario es administrador
+			//Comprobar que el role del usuario es administrador
 			Utils::isAdmin();
 
 			$categoria = new Categoria();
@@ -33,9 +34,6 @@
 			if(isset($_POST)){
 			 	 // var_dump($_POST);
 			 	 // die();
-
-
-
 
 			 	//Validamos si llega algun campo vacio, en tal caso retornamos con un error en la sesion
 			 	$nombre = isset($_POST['nombre']) ? $_POST['nombre']:false;
@@ -68,8 +66,29 @@
 
 			header("Location:".base_url.'categoria/index');
 
+			}
+		}
+
+		//Listar productos de una misma categoria
+		public function ver(){
+
+			if(isset($_GET['id'])){
+
+			//Buscar la categoria seleccionada por id	
+			$id = $_GET['id'];
+			$categoria = new Categoria();
+			$categoria->setIdCategoria($id);
+			$categoria_selected = $categoria->getOne();
+			
+
+			//Buscar los productos asociados a esa categoria
+			$productos = new Producto();
+			$productos->setFk_id_categoria($id);
+			$productos = $productos->getAllByCategory();
+			}
+
+			require_once 'views/categoria/ver.php';
 		}
 	}
-}
 
  ?>
