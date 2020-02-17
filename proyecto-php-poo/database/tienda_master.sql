@@ -29,6 +29,7 @@ INSERT INTO categorias VALUES(NULL, 'Sudadera');
 CREATE TABLE productos(
 id_producto 		int(255) auto_increment not null,
 descripcion	    	text,
+nombre              varchar(255),
 precio				float(100,2) not null,
 fk_id_categoria		int(255) not null,
 stock				int(255) not null,

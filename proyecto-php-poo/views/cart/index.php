@@ -22,7 +22,7 @@
 		<th></th>
 	</tr>
 
-	<?php var_dump($_SESSION['cart']); ?>
+	<!--?php var_dump($_SESSION['cart']); ?>-->
 	
 
 <?php foreach ($_SESSION['cart'] as $indice => $value):
@@ -33,18 +33,22 @@
 		
 	<tr>
 			<?php if($producto->imagen != null): ?>
-				<td><img src="<?=base_url."uploads/images/".$producto->imagen;?>" alt="<?=$producto->imagen?>"></td>
+				<td><img class ="img-cart" style="width: 50px;" src="<?=base_url."uploads/images/".$producto->imagen;?>" alt="<?=$producto->imagen?>"></td>
 			<?php else: ?>
-				<td><img src="<?=base_url."assets/images/camisa-blanca-dibujo-png.png"?>"></td>
+				<td><img class ="img-cart" style="width: 50px;" src="<?=base_url."assets/images/camisa-blanca-dibujo-png.png"?>"></td>
 			<?php endif; ?>	
 		
-		<td><?=$producto->nombre;?></td>
+		<td><a href="<?=base_url."producto/ver&id=".$producto->id_producto?>"><?=$producto->nombre;?></a></td>
 		<td><?=$producto->precio;?></td>
-		<td>1</td>
+		<td><?=$value['unidades']?></td>
 		<td>
 				<a href="<?=base_url?>producto/delete&id=<?=$prod->id_producto?>" class="button button-getion button-red">Borrar</a>
 		</td>
 	</tr>
 	
 <?php endforeach; ?>
+
+
 </table>
+
+<!-- <?php var_dump($_SESSION['cart']); ?> -->

@@ -20,8 +20,6 @@
 			<a style="text-decoration: none;" href="<?=base_url?>usuario/registro">Registrarme</a>	
 		</div>
 		
-		
-
 		<?php else: ?>
 
 			<!-- En caso de que el usuario este logeado mostramos las opciones standares -->
@@ -32,6 +30,11 @@
 			
 			<li><a href="<?=base_url?>usuario/pedidos">Mis Pedidos</a></li>
 			<li><a href="<?=base_url?>usuario/logout">Cerrar sesión</a></li>
+			<br>
+			<h3>Carrito</h3>
+			<li><a href="<?=base_url?>cart/index">Mi Carrito</a></li>
+			<li><a href="<?=base_url?>cart/index">Productos</a></li>
+			<li><a href="<?=base_url?>cart/index">Total </a></li>
 
 			<!-- En caso de que sea admin mostramos las opciones de administrador -->
 			<br>

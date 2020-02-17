@@ -25,7 +25,7 @@
 			<h4>Precio: </h4>
 			<p><?=$producto->precio?></p>
 
-			<a href="" class="button">Comprar</a>
+			<a href="<?=base_url."cart/add&id=".$producto->id_producto?>" class="button">Comprar</a>
 
 		</div>
 		

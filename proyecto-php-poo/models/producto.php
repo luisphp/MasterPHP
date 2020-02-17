@@ -121,8 +121,10 @@
 				$result = true;
 			}
 
-			// var_dump($result);
-			// die();
+
+			//Obtener error de base de datos:
+			//var_dump($this->db->error);
+			//die();
 
 			return $result;
 		}

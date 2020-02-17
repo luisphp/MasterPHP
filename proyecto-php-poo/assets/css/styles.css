@@ -395,6 +395,12 @@ button
 
 }
 
+.img-cart
+{
+	width: 50px;
+	height: 100px;
+}
+
 .detail-product
 {
 	display: block;
@@ -430,6 +436,8 @@ button
 	width: 30%;
 	float: left;
 }
+
+
 
 /*Footer*/
 

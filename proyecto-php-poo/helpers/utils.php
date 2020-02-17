@@ -32,6 +32,26 @@
 
 
 		}
+
+		public static function cart(){
+
+			if(isset($_SESSION['cart'])){
+
+				$stats = array(
+					'total' => 0,
+					'count' => 0,
+
+				);
+
+			}elseif(isset($_SESSION['cart'])){
+
+				$stats = array(
+					'total' => '',
+					'count' => count($_SESSION['cart']),
+				);
+			}	
+
+		}
 	}
 
 
