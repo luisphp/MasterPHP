@@ -74,6 +74,28 @@
 			return $stats;	
 
 		}
+
+		public static function showStatus($status){
+
+			$value = 'pendiente'; 
+
+			if($status == 'confirm'){
+
+				$value = 'pendiente';
+
+
+			}elseif($status == 'preparation'){
+				$value = 'pendiente';
+			}elseif($status == 'preparation'){
+				$value = 'En preparacion';
+			}elseif($status == 'ready'){
+				$value = 'preparado';
+			}elseif($status == 'sended'){
+				$value = 'enviado';
+			}
+
+			return $value;
+		}
 	}
 
 
