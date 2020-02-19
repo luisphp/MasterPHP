@@ -1,5 +1,5 @@
 <h1>Cart</h1>
-
+<?php if(isset($_SESSION['cart'])): ?>
 <table>
 
 	<!--
@@ -23,7 +23,7 @@
 	</tr>
 
 	<!--?php var_dump($_SESSION['cart']); ?>-->
-	
+
 
 <?php foreach ($_SESSION['cart'] as $indice => $value):
 
@@ -47,8 +47,22 @@
 	</tr>
 	
 <?php endforeach; ?>
-
-
 </table>
+<br>
+<?php $status = Utils::StatusCart();  ?>
+<h3 style="float: right; width: 45%">Total (<?=$status['total'];?>)</h3>
+
+<br>
+<br>
+<a href="<?=base_url."pedido/hacer"?>" class="button button_pedido" title="">Hacer pedido</a>
+<?php else: ?>
+
+	<h5>Cart vacio</h5>
+
+<?php endif; ?>	
+<!-- <?php  //Utils::deleteSession('cart'); ?> -->
+
+
+
 
 <!-- <?php var_dump($_SESSION['cart']); ?> -->

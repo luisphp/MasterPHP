@@ -14,6 +14,7 @@
 			return $session_name;
 			
 		}
+
 		public static function isAdmin(){
 			if(!isset($_SESSION['admin'])){
 				header("Location:".base_url);
@@ -33,9 +34,9 @@
 
 		}
 
-		public static function cart(){
+		public static function StatusCart(){
 
-			if(isset($_SESSION['cart'])){
+			if(!isset($_SESSION['cart'])){
 
 				$stats = array(
 					'total' => 0,
@@ -46,10 +47,31 @@
 			}elseif(isset($_SESSION['cart'])){
 
 				$stats = array(
-					'total' => '',
-					'count' => count($_SESSION['cart']),
+					'total' => 0,
+					'count' => 0,
 				);
-			}	
+
+				$total = 0;
+
+				$cantidad = count($_SESSION['cart']);
+
+
+				foreach ($_SESSION['cart'] as $key => $producto) {
+					$total += $producto['precio']*$producto['unidades'];
+				}
+
+				$stats = array(
+					'total' => $total,
+					'count' => $cantidad,
+				);
+
+
+
+
+
+			}
+
+			return $stats;	
 
 		}
 	}

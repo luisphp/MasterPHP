@@ -32,9 +32,11 @@
 			<li><a href="<?=base_url?>usuario/logout">Cerrar sesión</a></li>
 			<br>
 			<h3>Carrito</h3>
+			<!-- Calculos de los status del cart, cuanto items hay, total en valor monetario -->
+			<?php  $status = Utils::StatusCart();?>
 			<li><a href="<?=base_url?>cart/index">Mi Carrito</a></li>
-			<li><a href="<?=base_url?>cart/index">Productos</a></li>
-			<li><a href="<?=base_url?>cart/index">Total </a></li>
+			<li><a href="<?=base_url?>cart/index">Productos (<?=$status['count'];?>)</a></li>
+			<li><a href="<?=base_url?>cart/index">Total (<?=$status['total'];?>)</a></li>
 
 			<!-- En caso de que sea admin mostramos las opciones de administrador -->
 			<br>
@@ -57,3 +59,4 @@
 
 <!-- Contenido central -->
 <div id="central">
+	<?php //Utils::deleteSession('cart'); ?>

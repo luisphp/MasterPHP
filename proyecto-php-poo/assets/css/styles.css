@@ -437,6 +437,12 @@ button
 	float: left;
 }
 
+.button_pedido
+{
+	display: block;
+	float: right;
+	width: 100px;
+}
 
 
 /*Footer*/
