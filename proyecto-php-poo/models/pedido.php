@@ -200,6 +200,11 @@
 
 		}
 
+		public function getProductoByPedido(){
+
+			$sql = "SELECT "
+		}
+
 
 
 }
