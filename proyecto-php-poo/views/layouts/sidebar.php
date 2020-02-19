@@ -28,7 +28,7 @@
 			<ul class="panel_options">
 				
 			
-			<li><a href="<?=base_url?>usuario/pedidos">Mis Pedidos</a></li>
+			<li><a href="<?=base_url?>pedido/mis_pedidos">Mis Pedidos</a></li>
 			<li><a href="<?=base_url?>usuario/logout">Cerrar sesión</a></li>
 			<br>
 			<h3>Carrito</h3>
@@ -44,7 +44,7 @@
 			<?php if(isset($_SESSION['admin'])): ?>
 			<strong>Admin Panel</strong>
 			
-			<li><a href="<?=base_url?>pedido/index">Gestionar todos los Pedidos</a></li>
+			<li><a href="<?=base_url?>pedido/gestion">Gestionar todos los Pedidos</a></li>
 			
 			<li><a href="<?=base_url?>categoria/index">Gestionar todas las Categorias</a></li>
 			

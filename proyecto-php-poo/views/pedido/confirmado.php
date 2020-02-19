@@ -18,7 +18,35 @@
 	Total a pagar: <?= $pedido->coste ?>
 	<br>
 
-	Productos: 
+	Productos:
+	<table>
+		<tr>
+			<th>Imagen</th>
+			<th>Nombre</th>
+			<th>Precio</th>
+			<th>Unidades</th>
+		</tr>
+
+	<?php while($producto = $productos->fetch_object()): ?>
+		
+			
+	<tr>
+			<?php if($producto->imagen != null): ?>
+				<td><img class ="img-cart" style="width: 50px;" src="<?=base_url."uploads/images/".$producto->imagen;?>" alt="<?=$producto->imagen?>"></td>
+			<?php else: ?>
+				<td><img class ="img-cart" style="width: 50px;" src="<?=base_url."assets/images/camisa-blanca-dibujo-png.png"?>"></td>
+			<?php endif; ?>	
+		
+		<td><a href="<?=base_url."producto/ver&id=".$producto->id_producto?>"><?=$producto->nombre;?></a></td>
+		<td><?=$producto->precio;?></td>
+		<td><?=$producto->unidades;?></td>
+	</tr>		
+		
+
+	<?php endwhile; ?>
+</table>
+
+
 </pre>
 
 

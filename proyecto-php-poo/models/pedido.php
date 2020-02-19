@@ -113,14 +113,26 @@
         $this->hora = $this->db->real_escape_string($hora);
     }
 
+    //Metodos para consultas a la base de datos, lectura, actualizacion segun sea el caso
 
-		public function getAll(){
+        //Obtener todos los pedidos
+		public function getAllByUser(){
 
-			$productos = $this->db->query("SELECT * FROM pedidos ORDER BY id_pedido DESC");
+			$pedidos = $this->db->query("SELECT * FROM pedidos p WHERE p.fk_id_usuario = '{$this->getFkIdUsuario()}' ORDER BY id_pedido DESC");
 
-			return $productos;
+			return $pedidos;
 		}
 
+
+        //Obtener todos los pedidos
+        public function getAll(){
+
+            $pedidos = $this->db->query("SELECT * FROM pedidos ORDER BY id_pedido DESC");
+
+            return $pedidos;
+        }
+
+        //Obtener un pedido en especifico
 		public function getOne(){
 
 			$producto = $this->db->query("SELECT * FROM pedidos WHERE id_pedido = '{$this->getId_pedido()}'");
@@ -150,6 +162,8 @@
 			return $result;
 		}
 
+
+        //Guardar linea / pedido
 		public function saveLinea(){
 
 			$sql = "SELECT LAST_INSERT_ID() as pedido;";
@@ -187,6 +201,7 @@
 			return $result;
 		}
 
+        //Obtener el ultimo recien pedido realizado
 		public function getOneByUser(){
 
 			$sql = "SELECT p.id_pedido, p.coste  FROM pedidos p"
@@ -200,10 +215,29 @@
 
 		}
 
-		public function getProductoByPedido(){
+        //Obtener los productos de una misma orden
+		public function getProductoByPedido($id){
 
-			$sql = "SELECT "
+			//$sql = "SELECT * FROM productos WHERE id_producto IN (SELECT fk_id_producto FROM lineas_pedidos WHERE fk_id_pedido = '{$id}')";
+
+            $sql = "SELECT pr.*, lp.unidades FROM productos pr "
+            . " INNER JOIN lineas_pedidos lp ON pr.id_producto = lp.fk_id_producto"
+            . " WHERE lp.fk_id_pedido = '{$id}'";
+
+            $productos = $this->db->query($sql);
+
+            return $productos;
 		}
+
+        //Obtener los detalles de un pedido del usuario logeado
+        public function getOneByUserAndById(){
+
+            $producto = $this->db->query("SELECT * FROM pedidos p WHERE p.id_pedido = '{$this->getIdPedido()}' AND p.fk_id_usuario = '{$this->getFkIdUsuario()}'");
+
+            return $producto->fetch_object();
+
+
+        }
 
 
 

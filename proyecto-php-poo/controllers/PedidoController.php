@@ -72,14 +72,65 @@
 				$pedido = new Pedido();
 				$pedido->setFkIdUsuario($_SESSION['identity']->id_usuario);
 				$pedido = $pedido->getOneByUser();
+
+				$pedido_productos = new Pedido();
+				$productos = $pedido_productos->getProductoByPedido($pedido->id_pedido);
 				
 			}
 
-			
-
-
-
 			require_once 'views/pedido/confirmado.php';
+		}
+
+		public function mis_pedidos(){
+
+			if(isset($_SESSION['identity'])){
+
+				$pedido = new Pedido();
+				$pedido->setFkIdUsuario($_SESSION['identity']->id_usuario);
+				$pedidos = $pedido->getAllByUser();
+
+				require_once 'views/pedido/mispedidos.php';
+
+
+			}else{
+				header("location: ".base_url);
+			}
+			
+		}
+
+		public function detalle(){
+
+			if(isset($_SESSION['identity']) && isset($_GET['id'])){
+
+				//Sacar el pedido
+
+				$pedido = new Pedido();
+				$pedido->setFkIdUsuario($_SESSION['identity']->id_usuario);
+				$pedido->setIdPedido($_GET['id']);
+				$pedido = $pedido->getOneByUserAndById();
+
+				//Sacar los productos de dicho pedido
+
+				$pedido_productos = new Pedido();
+				$productos = $pedido_productos->getProductoByPedido($pedido->id_pedido);
+
+				require_once 'views/pedido/detalle.php';
+			}else{
+				header("location: ".base_url."pedido/mis_pedidos");
+			}
+		}
+
+		public function gestion(){
+
+			Utils::isAdmin();	
+
+			$gestion = true;
+
+			$pedido = new Pedido();
+			$pedidos = $pedido->getAll();
+
+			require_once 'views/pedido/mispedidos.php';
+
 		}
 
 }
