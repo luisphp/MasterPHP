@@ -133,6 +133,28 @@
 
 		}
 
+		public function estado(){
+
+			Utils::isAdmin();
+
+			if(isset($_POST) && $_POST['pedido_id'] && $_POST['estado']){
+			
+			//Update del pedido
+
+			$pedido = new Pedido();
+			$pedido->setIdPedido($_POST['pedido_id']);
+			$pedido->setEstado($_POST['estado']);
+			$pedido->updateOneStatus();
+
+			header("Location:".base_url.'pedido/detalle&id='.$_POST['id_pedido']);
+
+			}else{
+
+				header("Location: ".base_url);
+
+			}
+		}
+
 }
 
  ?>

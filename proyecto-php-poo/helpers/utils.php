@@ -79,19 +79,14 @@
 
 			$value = 'pendiente'; 
 
-			if($status == 'confirm'){
-
-				$value = 'pendiente';
-
-
-			}elseif($status == 'preparation'){
-				$value = 'pendiente';
+			if($status == 'confirmado'){
+				$value = 'Pendiente';
 			}elseif($status == 'preparation'){
 				$value = 'En preparacion';
 			}elseif($status == 'ready'){
-				$value = 'preparado';
+				$value = 'Preparado';
 			}elseif($status == 'sended'){
-				$value = 'enviado';
+				$value = 'Enviado';
 			}
 
 			return $value;

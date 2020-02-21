@@ -239,6 +239,29 @@
 
         }
 
+        //Editar el status de un pedido en especifico
+        public function updateOneStatus(){
+
+            $sql = "UPDATE `pedidos` SET `estado` = '{$this->getEstado()}'"; 
+
+            $sql.= " WHERE id_pedido = '{$this->getIdPedido()}';";
+
+            $update =  $this->db->query($sql);
+
+            $result = false;
+
+            if($update){
+
+                $result = true;
+            }
+            
+            //Ver error en base de datos con orientado a objetos
+            //var_dump( $sql ,$this->db->error);
+            //die();
+
+            return $result;
+        }
+
 
 
 }

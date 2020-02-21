@@ -1,15 +1,22 @@
 <h1>Detalles del pedido: </h1>
+
 <?php if(isset($_SESSION['admin']) && isset($pedido)): ?>
+
 <div style="float: right; width: 100%">
+
 	<div style="float:right">
+
 		<h3>Cambiar estado del pedido</h3>
+
 		<form action="<?=base_url."pedido/estado"?>" method="POST" style="float: right">
+			<input type="hidden" name="pedido_id" value="<?=Utils::showStatus($pedido->id_pedido)?>">
 			<select name="estado">
 				<option value="confirm">Pendiente</option>
 				<option value="preparation">En preparacion</option>
 				<option value="ready">Preparado</option>
 				<option value="enviado">Sended</option>
 			</select>
+
 			<input type="submit" name="" value="Cambiar estado">
 		</form>
 	</div>
@@ -28,7 +35,7 @@
 	<h3>Datos del pedido</h3>
 	<br>
 	Estado:
-	<strong><?=$pedido->estado?></strong>
+	<strong><?=Utils::showStatus($pedido->estado)?></strong>
 	<br>
 	Numero de pedido: <?= $pedido->id_pedido ?>
 	<br>
