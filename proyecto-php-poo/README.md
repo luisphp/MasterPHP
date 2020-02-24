@@ -3,7 +3,7 @@
 ### Descripción:
 Tienda online con motivo de tienda de camisetas hecha cobn programación orientada a objetos (POO) y base de datos en MySQL
 
-- Registro login y logout de usuarios.
+- Registro, login y logout de usuarios.
 - Niveles de usuario: Administrador y usuario.
 - Creación de ordenes / items (camisetas) / Categorias según nivel de usuario.
 - Creación, listado, edición y borrado de items (camisetas) visible para todos los niveles de usuarios y tambien dependiendo de si el usuario es administrador para ejecutar ciertas acciones como administración de categorías, items, cambio de status de ordenes.
