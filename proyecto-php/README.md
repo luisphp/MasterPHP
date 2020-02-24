@@ -24,13 +24,13 @@ Este es un proyecto web tipo blog de videojuegos con basde de datos en SQL, php 
 <html>
 <body>
 	<!-- Images -->
-	<img src="Captures/Captura1.PNG" alt="" style="width= 400px;">
-	<img src="Captures/Captura2.PNG" alt="" style="width= 400px;">
-	<img src="Captures/Captura3.PNG" alt="" style="width= 400px;">
-	<img src="Captures/Captura4.PNG" alt="" style="width= 400px;">
-	<img src="Captures/Captura5.PNG" alt="" style="width= 400px;">
-	<img src="Captures/Captura6.PNG" alt="" style="width= 400px;">
-	<img src="Captures/Captura7.PNG" alt="" style="width= 400px;">
+	<img src="Capturas/Captura1.PNG" alt="" style="width= 400px;">
+	<img src="Capturas/Captura2.PNG" alt="" style="width= 400px;">
+	<img src="Capturas/Captura3.PNG" alt="" style="width= 400px;">
+	<img src="Capturas/Captura4.PNG" alt="" style="width= 400px;">
+	<img src="Capturas/Captura5.PNG" alt="" style="width= 400px;">
+	<img src="Capturas/Captura6.PNG" alt="" style="width= 400px;">
+	<img src="Capturas/Captura7.PNG" alt="" style="width= 400px;">
 </body>
 </html>
 
