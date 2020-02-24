@@ -68,5 +68,8 @@ if(isset($_GET['controller'])){
 
 	require_once 'views/layouts/footer.php';
 
+	//Numero de tarjeta:
+	//Fecha de vencimiento: 
+	//
 
 ?>
