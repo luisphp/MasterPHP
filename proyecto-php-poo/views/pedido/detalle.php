@@ -9,12 +9,12 @@
 		<h3>Cambiar estado del pedido</h3>
 
 		<form action="<?=base_url."pedido/estado"?>" method="POST" style="float: right">
-			<input type="hidden" name="pedido_id" value="<?=Utils::showStatus($pedido->id_pedido)?>">
+			<input type="hidden" name="pedido_id" value="<?=$pedido->id_pedido ?>">
 			<select name="estado">
-				<option value="confirm">Pendiente</option>
-				<option value="preparation">En preparacion</option>
-				<option value="ready">Preparado</option>
-				<option value="enviado">Sended</option>
+				<option value="confirm" <?= $pedido->estado == 'confirm'  ? 'selected' : ''  ?>>Pendiente</option>
+				<option value="preparation" <?= $pedido->estado == 'preparation' ? 'selected' : ''  ?>>En preparacion</option>
+				<option value="ready" <?= $pedido->estado == 'ready'  ? 'selected' : ''  ?>>Preparado</option>
+				<option value="enviado" <?= $pedido->estado == 'enviado' ? 'selected' : ''  ?>>Sended</option>
 			</select>
 
 			<input type="submit" name="" value="Cambiar estado">

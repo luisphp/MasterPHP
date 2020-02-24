@@ -244,7 +244,7 @@
 
             $sql = "UPDATE `pedidos` SET `estado` = '{$this->getEstado()}'"; 
 
-            $sql.= " WHERE id_pedido = '{$this->getIdPedido()}';";
+            $sql .= " WHERE id_pedido = '{$this->getIdPedido()}';";
 
             $update =  $this->db->query($sql);
 

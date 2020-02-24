@@ -137,16 +137,19 @@
 
 			Utils::isAdmin();
 
-			if(isset($_POST) && $_POST['pedido_id'] && $_POST['estado']){
+			if(isset($_POST) && isset($_POST['pedido_id']) && isset($_POST['estado'])){
+
+				$id_pedido = $_POST['pedido_id'];
+				$estado_nuevo = $_POST['estado'];
 			
 			//Update del pedido
 
 			$pedido = new Pedido();
-			$pedido->setIdPedido($_POST['pedido_id']);
-			$pedido->setEstado($_POST['estado']);
+			$pedido->setIdPedido($id_pedido);
+			$pedido->setEstado($estado_nuevo);
 			$pedido->updateOneStatus();
 
-			header("Location:".base_url.'pedido/detalle&id='.$_POST['id_pedido']);
+			header("Location:".base_url.'pedido/detalle&id='.$id_pedido);
 
 			}else{
 

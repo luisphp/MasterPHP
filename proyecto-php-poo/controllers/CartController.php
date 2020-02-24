@@ -3,6 +3,7 @@
 	require_once 'models/producto.php';
 	require_once 'helpers/utils.php';
 
+	//Var el carrito
 	class cartController
 	{
 		public function index(){
@@ -13,6 +14,7 @@
 			 			
 		}
 
+		//Añadir un item al carrito
 		public function add(){
 
 			//Verificar si llega el id de la URL
@@ -64,16 +66,77 @@
 
 		}
 
-		public function remove(){
-
-		}
-
+		//Remover todos los items del carrito
 		public function delete_all(){
 			
 			Utils::deleteSession('cart');
 
 			header("Location:".base_url."cart/index");
 		}
+
+		//Remover un item del carrito
+		public function remove_one(){
+
+			if(isset($_GET['id'])){
+
+				// var_dump($_SESSION['cart']);
+				// die();
+
+				$index = $_GET['id'];
+
+				unset($_SESSION['cart'][$index]);
+
+				header("Location:".base_url."cart/index");
+			}else{
+				header("Location:".base_url."cart/index");
+			}
+		}
+		
+		//Sumar unidad a un item en especifico
+		public function up(){
+
+			if(isset($_GET['indice'])){
+
+				// var_dump($_SESSION['cart']);
+				// die();
+
+				$index = $_GET['indice'];
+				if($_SESSION['cart'][$index]['unidades'] <= 5){
+					$_SESSION['cart'][$index]['unidades']++;
+				}
+				
+
+				header("Location:".base_url."cart/index");
+			}else{
+				header("Location:".base_url."cart/index");
+			}
+		}
+
+				//Restar unidad a item en especifico
+		public function down(){
+
+			if(isset($_GET['indice'])){
+
+				// var_dump($_SESSION['cart']);
+				// die();
+
+				$index = $_GET['indice'];
+
+				
+
+				if($_SESSION['cart'][$index]['unidades'] == 0){
+					unset($_SESSION['cart'][$index]);
+				}else{
+					$_SESSION['cart'][$index]['unidades']--;
+				}
+
+				
+
+				header("Location:".base_url."cart/index");
+			}else{
+				header("Location:".base_url."cart/index");
+			}
+		}		
 	}
 
 

@@ -269,8 +269,18 @@ button,
 
 .button-red
 {
+
 	background: red;
 	border-color: orange;
+
+}
+
+.button-red-delete
+{
+
+	background: red;
+	border-color: orange;
+	width: 20%;
 }
 
 .button-gray
@@ -442,6 +452,15 @@ button
 	display: block;
 	float: right;
 	width: 100px;
+}
+
+.button_red
+{
+	display: block;
+	float: right;
+	width: 100px;
+	background: red;
+	color: white;
 }
 
 
