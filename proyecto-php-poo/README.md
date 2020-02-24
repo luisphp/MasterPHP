@@ -7,7 +7,7 @@ Tienda online con motivo de tienda de camisetas hecha cobn programación orienta
 - Niveles de usuario: Administrador y usuario.
 - Creación de ordenes / items (camisetas) / Categorias según nivel de usuario.
 - Creación, listado, edición y borrado de items (camisetas) visible para todos los niveles de usuarios y tambien dependiendo de si el usuario es administrador para ejecutar ciertas acciones como administración de categorías, items, cambio de status de ordenes.
-- Carrito de compras
+- Carrito de compras.
 - Confirmacion de pedidos.
 - Vista de mis pedidos.
 - Vista de mis gestion de pedidos y cambio de status.
